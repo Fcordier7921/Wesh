@@ -1,0 +1,188 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <title>wesh</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="iecss.css" />
+<![endif]-->
+<script type="text/javascript" src="js/boxOver.js"></script>
+</head>
+
+<body>
+  <div id="main_container">
+    <div id="header">
+      <div class="top_right">
+        <div class="languages d-flex mx-5">
+          <div class="lang_text">Langues:</div>
+          <a href="#" class="lang mt-1"><img src="images/en.gif" alt="" border="0" /></a> <a href="#"
+            class="lang mt-1"><img src="images/de.gif" alt="" border="0" /></a>
+        </div>
+
+      </div>
+      <div id="logo"> <a href="#"><img src="images/logo.png" alt="" border="0" width="182" height="85" /></a> </div>
+    </div>
+    <div id="main_content">
+      <div id="menu_tab">
+        <ul class="menu">
+          <li><a href="http://localhost/vueJs/" class="nav"> Home </a></li>
+          <li class="divider"></li>
+          <li><a href="#" class="nav">produits</a></li>
+          <li class="divider"></li>
+          <li><a href="#" class="nav">Offres spéciales</a></li>
+
+          <li class="divider"></li>
+          <li><a href="#" class="nav">livraison </a></li>
+          <li class="divider"></li>
+          <li><a href="contact.html" class="nav">contact</a></li>
+          <li class="divider"></li>
+          <li><a href="details.html" class="nav">Details</a></li>
+
+          <li class="divider mx-5" style="opacity: 0;"></li>
+          <li class="divider mx-5" style="opacity: 0;"></li>
+          <li class="divider " style="opacity: 0;"></li>
+          <li><a href="#" class="nav ">Mon compte</a></li>
+          <li class="divider"></li>
+          <li><a href="#" class="nav">S'inscrire</a></li>
+        </ul>
+      </div>
+      <div id='app' class="">
+        <!-- end of menu tab -->
+        <div class="left_content">
+          <div class="title_box">Categories</div>
+          <ul class="left_menu">
+            <li class="odd"><a href="#">vêtements pour hommes</a></li>
+            <li class="even"><a href="#">vêtements pour femmes</a></li>
+            <li class="odd"><a href="#">bijoux</a></li>
+            <li class="even"><a href="#">électronique</a></li>
+          </ul>
+          <div class="title_box">Special Products</div>
+          <div class="border_box">
+            <div class="product_title"><a href="#">Makita 156 MX-VL</a></div>
+            <div class="product_img"><a href="#"><img src="images/p1.jpg" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+          </div>
+
+        </div>
+        <!-- end of left content -->
+        <div class="center_content">
+
+
+          <div class="d-flex">
+            <div style="width: 15rem;" class="mx-4">
+              <select class="form-control p-0">
+                <option value="">Toutes les catégories</option>
+                <option value="men clothing">Vêtements pour Hommes</option>
+                <option value="women clothing">Vêtements pour Femmes</option>
+                <option value="jewelery">Bijoux</option>
+                <option value="electronics">Hi-tech</option>
+              </select>
+            </div>
+            <div style="width: 15rem;">
+              <select class="form-control p-0">
+                <option value="">Tous les prix</option>
+                <option value="10">Moins de 10€</option>
+                <option value="50">Entre de 10€ et 50€</option>
+                <option value="51">Entre de 50€ et 100€</option>
+                <option value="101">Supérieur 100€</option>
+              </select>
+            </div>
+          </div>
+          <button v-on:click="UpdatePost()">clique</button>
+          <div class="row">
+            <div v-for="post in posts" class="mx-5" style="list-style: none;">
+                <div class="prod_box" style="width: 150px; height:133px;">
+                  <div class="center_prod_box">
+                    <div class="product_title"><a href="#" style="white-space: pre-wrap;">{{post.title}}</a>
+                    </div>
+                    <div class="product_img"><a href="#"><img v-bind:src="post.image" alt="" border="0" style="width: 94px; height:71px;" /></a>
+                    </div>
+                    <div class="prod_price"><span class="price">{{post.price}}</span>
+                    </div>
+                  </div>
+                  <div class="prod_details_tab"> <a href="#" class="prod_buy">ajouter </a> <a href="#"
+                      class="prod_details">Détails</a>
+                  </div>
+                </div>
+            </div>
+          </div>
+          
+
+        </div>
+        <!-- end of center content -->
+        <div class="right_content">
+          <div class="title_box">recherche</div>
+          <div class="border_box">
+            <input type="search" class="form-control mt-2 p-0" id="search" placeholder="Rechercher...">
+            <a href="#" class="join">Rechercher</a> </div>
+          <div class="shopping_cart">
+            <div class="title_box">Shopping cart</div>
+            <div class="cart_details"> 3 items <br />
+              <span class="border_cart"></span> Total: <span class="price">350$</span> </div>
+            <div class="cart_icon"><a href="#"><img src="images/shoppingcart.png" alt="" width="35" height="35"
+                  border="0" /></a></div>
+          </div>
+          <div class="title_box">Les nouveauté</div>
+          <div class="border_box">
+            <div class="product_title"><a href="#">Motorola 156 MX-VL</a></div>
+            <div class="product_img"><a href="#"><img src="images/p2.jpg" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+          </div>
+          
+        <!-- end of right content -->
+      </div>
+      <div class="m-5">
+        <img src="https://www.coverjack.fr/wp-content/uploads/2019/11/ecommerce.png" alt="" width="900" height="300" />
+      </div>
+      <!-- end of main content -->
+      <div class="footer m">
+        <div class="left_footer"> <img src="images/logo.png" alt="" width="89" height="42" /> </div>
+        <div class="center_footer"> Template name. All Rights Reserved 2008<br />
+          <a href="http://csscreme.com"><img src="images/csscreme.jpg" alt="csscreme" title="csscreme"
+              border="0" /></a><br />
+          <img src="images/payment.gif" alt="" /> </div>
+        <div class="right_footer"> <a href="#">home</a> <a href="#">about</a> <a href="#">sitemap</a> <a
+            href="#">rss</a> <a href="#">contact us</a> </div>
+      </div>
+
+
+    </div>
+
+  </div>
+  </div>
+  <script>
+    let app= new Vue({
+          el:'#app',
+          data:{
+          posts: []
+          },
+          methods:{
+              UpdatePost(){
+              axios.get('https://fakestoreapi.com/products').then(reponse => this.posts= reponse.data).catch(erreur =>this.posts=[{title: "Erreur de chargement"}]);
+              }
+
+          }
+    })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
+    </script>!-- end of main_container -->
+</body>
+
+</html>
