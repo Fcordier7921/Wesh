@@ -290,7 +290,7 @@ float:left;
 padding:10px 10px 10px 11px;
 }
 .center_prod_box{
-width:173px;height: auto;float:left; text-align:center;padding:0px; margin:0px; border:1px #F0F4F5 solid;
+width:173px;height: auto;float:left; text-align:center;padding:0px; margin:0px; border:1px #F0F4F5 solid; box-shadow: 0.1rem 0 0.2rem #61858f, -0.1em 0 .2em #61858f;
 }
 .prod_details_tab{
 width:173px;
@@ -308,7 +308,9 @@ width:75px;
 height:24px;
 display:block;
 float:right;
-background:url(images/link_bg.gif) no-repeat center;
+border: solid #F0F4F5 2px;
+border-radius: 30px;
+box-shadow: 0.2rem 0 0.4rem  #61858f;
 margin:2px 5px 0 0;
 text-align:center;
 line-height:24px;
@@ -321,7 +323,9 @@ width:75px;
 height:24px;
 display:block;
 float:left;
-background:url(images/link_bg.gif) no-repeat center;
+border: solid #F0F4F5 2px;
+border-radius: 30px;
+box-shadow: 0.2rem 0 0.4rem  #61858f;
 margin:2px 0 0 5px;
 text-align:center;
 line-height:24px;
@@ -333,7 +337,9 @@ width:75px;
 height:24px;
 display:block;
 float:left;
-background:url(images/link_bg.gif) no-repeat center;
+border: solid #F0F4F5 2px;
+border-radius: 30px;
+box-shadow: 0.2rem 0 0.4rem #61858f;
 margin:2px 0 0 5px;
 text-align:center;
 line-height:24px;

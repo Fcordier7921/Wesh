@@ -5,11 +5,15 @@ new Vue({
           posts: [],
           shop:[],
           selected:'',
-          selectedp:''
+          selectedp:'',
+          selectedsearch:'',
+          showModal: false
           },
           mounted(){
             if(localStorage.getItem('posts')){
             this.posts=JSON.parse(localStorage.getItem('posts'));
+            }else if(localStorage.getItem('shop')) {
+              this.posts=JSON.parse(localStorage.getItem('shop'));
             }
           },
           methods:{
@@ -18,8 +22,8 @@ new Vue({
               localStorage.setItem("posts", JSON.stringify(this.posts));
 
               },
-              Updaetshop(index){//ajouter au panier
-                this.shop=posts.index;
+              Updaetshop(id){//ajouter au panier
+                this.shop.push(this.posts[id]);
                 localStorage.setItem("shop", JSON.stringify(this.shop));
               }
           }

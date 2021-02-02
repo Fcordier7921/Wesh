@@ -96,7 +96,7 @@
           </div>
           
           <div class="d-flex flex-wrap">
-            <div v-for="post in posts" class="">
+            <div v-for="(post, index) in posts" class="">
                 <div class="prod_box" style="width: 180px; height:220px;">
                   <div class="center_prod_box box" style="height:180px;">
                     <div class="product_title" style="height: 4rem;"><a href="#" style="white-space: pre-wrap;">{{post.title}}</a>
@@ -106,12 +106,12 @@
                     <div class="prod_price"><span class="price">{{post.price}} Euro</span>
                     </div>
                   </div>
-                  <div class="prod_details_tab"> <a href="#" v-on:click="Updaetshop(index)" class="prod_buy">ajouter </a> <a href="#"
-                      class="prod_details">Détails</a>
+                  <div class="prod_details_tab"><a type="submit" v-on:click="Updaetshop(index)" class="prod_buy">ajouter </a> <a v-on:click="Updaetshop(index)" class="prod_details">Détails</a>
                   </div>
                 </div>
             </div>
           </div>
+          
           
 
         </div>
@@ -119,7 +119,7 @@
         <div class="right_content">
           <div class="title_box">recherche</div>
           <div class="border_box">
-            <input type="search" class="form-control mt-2 p-0" id="search" placeholder="Rechercher...">
+            <input type="search" class="form-control mt-2 p-0" id="search" placeholder="Rechercher..." v-model="selectedsearch">
             <a href="#" class="join">Rechercher</a> </div>
           <div class="shopping_cart">
             <div class="title_box">Shopping cart</div>
