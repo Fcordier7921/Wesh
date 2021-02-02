@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
   <div id="main_container">
     <div id="header">
       <div class="top_right">
@@ -73,7 +74,6 @@
         <!-- end of left content -->
         <div class="center_content">
 
-
           <div class="d-flex">
             <div style="width: 15rem;" class="mx-4">
               <select class="form-control p-0" v-model="selected">
@@ -119,11 +119,11 @@
         <div class="right_content">
           <div class="title_box">recherche</div>
           <div class="border_box">
-            <input type="search" class="form-control mt-2 p-0" id="search" placeholder="Rechercher..." v-model="selectedsearch">
+            <input v-model="selectedsearch" type="search" class="form-control mt-2 p-0" id="search" placeholder="Rechercher..." autocapitalize="off" >
             <a href="#" class="join">Rechercher</a> </div>
           <div class="shopping_cart">
             <div class="title_box">Shopping cart</div>
-            <div class="cart_details"><p>{{shop.index}} items</p>
+            <div class="cart_details"><p>{{shop.length}} items</p>
               <span class="border_cart"></span> Total: <span class="price">350$</span> </div>
             <div class="cart_icon"><a href="#"><img src="images/shoppingcart.png" alt="" width="35" height="35"
                   border="0" /></a></div>
