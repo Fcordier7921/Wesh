@@ -15,7 +15,17 @@ new Vue({
           selectedsearch:'',
           showModal: false
           },
-          
+          computed:{
+              filteredlist(){
+                return this.posts.filter((post)=> {
+                  return post.description.toUpperCase().includes(this.selectedsearch.toUpperCase());
+                  // return post.title.toUpperCase().includes(this.selectedsearch.toUpperCase());
+                  // return post.category.includes(this.selected);
+                  // return post.price.includes(this.selected);
+
+                });
+              }
+          },
           mounted(){
             if(localStorage.getItem('posts')){
             this.posts=JSON.parse(localStorage.getItem('posts'));
@@ -23,13 +33,7 @@ new Vue({
               this.posts=JSON.parse(localStorage.getItem('shop'));
             }
           },
-          compted:{
-              filteredlist(){
-                return this.posts.filter((post)=>{
-                  return post.
-                })
-              }
-          },
+          
           methods:{
             UpdatePost(){//appelle de la base de donné
               
