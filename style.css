@@ -297,8 +297,9 @@ width:173px;
 height:31px;
 float:left;
 margin:3px 0 0 0;
+
 }
-img.left_bt{
+.img.left_bt{
 float:left;
 padding:6px 0 0 6px;
 }
