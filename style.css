@@ -498,3 +498,61 @@ text-align:center;
 color:#666666;
 padding:10px 0 0 60px;
 }
+/*modal*/
+.bloc-modale {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .modale {
+    overflow-y: hidden;
+    height: 40rem;
+    width: 80rem;
+    background: #efefef;
+    color: #323232;
+    padding: 0;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+  }
+  .modale p{
+      font-size: 1rem;
+  }
+  .modale a{
+    font-size: 1rem;
+}
+  
+  .btn-modale {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .swohsohp{
+      width: 80%;
+      height: 36rem;
+      overflow-y: auto;
+  }
+  .showprice{
+      width: 20%;
+  }
+  .shopone{
+      border: #DFD1D1 solid 2px;
+  }
+  .shoponetitle{
+      font-size: 1.5rem;
+  }

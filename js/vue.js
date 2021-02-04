@@ -1,5 +1,3 @@
-
-
 new Vue({
           el:'#app',
           data:{
@@ -79,11 +77,19 @@ new Vue({
           },
           methods:
           {
-            Updaetshop(id, price)
+            Updaetshop(id)
               {//ajouter au panier
-                this.shop.push(this.posts[id])
+                this.shop.push({
+                  title:this.posts[id].title,
+                  image: this.posts[id].image,
+                  price: this.posts[id].price,
+                  quantity: 1
+                })
                 localStorage.setItem("shop", JSON.stringify(this.shop));
-              }
-          },
+              },
+            toggleModale(){
+              this.showModal = !this.showModal
+            }
+          }
          
     })
