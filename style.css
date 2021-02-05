@@ -282,6 +282,14 @@ margin:3px 0 3px 0;
 display:block;
 border-top:1px #999999 dashed;
 }
+.pastille{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: #0fa0dd solid 3px;
+    border-radius: 50%;
+    background-color: #0fa0dd;
+  }
 /*---------prod_box----------*/
 .prod_box{
 width:173px;
@@ -517,6 +525,7 @@ padding:10px 0 0 60px;
     bottom: 0;
     left: 0;
     right: 0;
+   
   }
   
   .modale {
@@ -528,7 +537,7 @@ padding:10px 0 0 60px;
     padding: 0;
     position: absolute;
     top: 10%;
-    right: 10%;
+    right: 15%;
   }
   .modale p{
       font-size: 1rem;
@@ -548,7 +557,13 @@ padding:10px 0 0 60px;
       overflow-y: auto;
   }
   .showprice{
-      width: 20%;
+
+      position: fixed;
+      top: 10rem;
+      right: 14rem;
+      width: 16%;
+      height: 20rem;
+      
   }
   .shopone{
       border: #DFD1D1 solid 2px;
@@ -556,3 +571,4 @@ padding:10px 0 0 60px;
   .shoponetitle{
       font-size: 1.5rem;
   }
+  
