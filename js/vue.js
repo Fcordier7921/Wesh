@@ -1,21 +1,21 @@
 new Vue({
           el:'#app',
           data:{
-          post:'',
-          posts: [],
-          shop:[],
-          detail:[],
-          detalbool:true,
-          detalindex: '',
-          shopprice:'',
-          selected:'',
-          selectedp:'',
-          selectedsearch:'',
-          showModal: false,
-          showModal2: false,
-          ht:0,
-          tva:0,
-          ttc:0
+            post:'',
+            posts: [],
+            shop:[],
+            detail:[],
+            detalbool:true,
+            detalindex: '',
+            shopprice:'',
+            selected:'',
+            selectedp:'',
+            selectedsearch:'',
+            showModal: false,
+            showModal2: false,
+            ht:0,
+            tva:0,
+            ttc:0
           
           },
           
@@ -23,7 +23,7 @@ new Vue({
             
             axios.get('https://fakestoreapi.com/products').then(reponse => this.posts= reponse.data).catch(erreur =>this.posts=[{title: "Erreur de chargement"}]);
             
-
+            
             if(localStorage.getItem('shop'))
             {
       
@@ -90,17 +90,18 @@ new Vue({
 
                   let somme =0;
                   for( let i=0; i< this.shop.length; i++){
-                    somme += (this.shop[i].price) * (this.shop[i].quantity)
+                    somme += ((this.shop[i].price) * (this.shop[i].quantity))
+                  }
           
                   this.ht = somme;
                   return this.ht.toFixed(2);
                 
-                }
+                
               },
               addtva(){
 
                   this.tva= (this.ht * 0.2);
-                  return this.tva.toFixed(2)
+                  return this.tva.toFixed(2);
               },
               addttc(){
                 
